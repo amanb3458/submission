@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>project</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" style type="text/css" href="style.css">    
+</head>
+
+<body>
+
+<div class="menubar">
+
+  <div class="logo-container">
+    <img class="logo" src="logo.png">
+  </div>
+  <div class="right-menu">
+    <ul>
+	   <li><a href="project.html">home</a></li>
+	   <li><a href="">Blog</a></li>
+	   <li><a href="">Contact Us</a></li>
+	</ul>
+  
+  </div>
+
+
+</div>
+
+<div class="wrap">
+
+  
+  
+  <div id="arrow-left" class="arrow"></div>
+  <div id="slider"> 
+    <div class="slide slide1">
+      <div class="slide-content">
+        <span>Welcome </span>
+      </div>
+    </div>
+    <div class="slide slide2">
+      <div class="slide-content">
+        <span>Clicked</span>
+      </div>
+    </div>
+    <div class="slide slide3">
+      <div class="slide-content">
+        <span>World is beautiful</span>
+      </div>
+    </div>
+  </div>
+  <div id="arrow-right" class="arrow"></div>
+</div>
+
+
+
+
+<script>
+
+
+let sliderImages = document.querySelectorAll(".slide"),
+  arrowLeft = document.querySelector("#arrow-left"),
+  arrowRight = document.querySelector("#arrow-right"),
+  current = 0;
+
+
+function reset() {
+  for (let i = 0; i < sliderImages.length; i++) {
+    sliderImages[i].style.display = "none";
+  }
+}
+
+
+function startSlide() {
+  reset();
+  sliderImages[0].style.display = "block";
+}
+
+
+function slideLeft() {
+  reset();
+  sliderImages[current - 1].style.display = "block";
+  current--;
+}
+
+
+function slideRight() {
+  reset();
+  sliderImages[current + 1].style.display = "block";
+  current++;
+}
+
+
+arrowLeft.addEventListener("click", function() {
+  if (current === 0) {
+    current = sliderImages.length;
+  }
+  slideLeft();
+});
+
+
+arrowRight.addEventListener("click", function() {
+  if (current === sliderImages.length - 1) {
+    current = -1;
+  }
+  slideRight();
+});
+
+startSlide();
+</script>
+
+
+<div id="blog">
+
+<h1><u>Blog</u></h1>
+<div id="blog-post"><p><h4>Lorem ipsum dolor sit amet, tibique recusabo in mea. Iracundia interesset te eam, iudico labitur nostrum has et.
+ Nec lorem mazim vitae ne. Ad etiam sententiae usu. Ex mea labitur appareat, graeci argumentum ex sit. 
+ Sed no munere inermis democritum, audire utamur elaboraret ne cum.Sit cu eius dicant graeci, ut his alia solum atqui. 
+ At quo justo vocent expetenda. Est ne vitae tacimates, tota accumsan at per. 
+ Id sit eius qualisque. Ex est veri singulis, porro fastidii no ius, te sit solum fastidii oporteat. 
+ Voluptua expetenda duo ea. Ex elit nihil instructior nec, at mea eligendi senserit.</h4></p></div>
+ <p><img id="blogimage" src="photoimage4.jpeg"></p>
+</div>
+
+<footer>
+    <div class="footer">
+       <p>Designed by: Aman bhardwaj </p>
+	   <p	>Email id:amanb3458@gmail.com</p>
+	   <p>contact no: 853079881</p>
+	   <p>Office loaction:Mumbai</p>
+	<div id="social-media">
+       <img id="social" src="socialmedia.png">
+    </div>
+	
+   </div>
+</footer>
+
+
+</body>
+</html>
